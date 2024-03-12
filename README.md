@@ -24,10 +24,18 @@ target_metadata = Base.metadata
 
 **How use it:**   
 1. Copy repository:   
-```git clone https://github.com/leggongum/sqlalchemy_starting_point.git```   
-2. Create .env file and fill it with your db params (You can skip this step to use sqlite db)   
-3. Create your models into src/models.py   
-4. Create alembic revision:   
+```git clone https://github.com/leggongum/sqlalchemy_starting_point.git```
+2. Download requirements:
+```
+cd sqlalchemy_starting_point
+virtualenv venv
+```
+Activate venv for Windows: ```venv\scripts\activate```   
+For Linux: ```. venv/bin/activate```   
+```pip install requirements.txt```    
+3. Create .env file and fill it with your db params (You can skip this step to use sqlite db)   
+4. Create your models into src/models.py   
+5. Create alembic revision:   
 ```alembic revision --autogenerate```   
-5. Use revision:   
+6. Use revision:   
 ```alembic upgrade head```   
