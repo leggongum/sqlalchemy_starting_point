@@ -13,7 +13,7 @@ from config import settings
 from models import Base
 
 section = config.config_ini_section
-config.set_section_option(section, 'DB_URL', settings.DB_URL_POSTGRES if settings.DB_MODE == 'prod' else settings.DB_URL_SQLite)
+config.set_section_option(section, 'DB_URL', settings.DB_URL)
 
 target_metadata = Base.metadata
 ```
