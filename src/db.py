@@ -4,7 +4,7 @@ from sqlalchemy.orm import DeclarativeBase
 from config import settings
 
 engine = create_async_engine(
-    url=settings.DB_URL_POSTGRES if settings.DB_MODE == 'prod' else settings.DB_URL_SQLite,
+    url=settings.DB_URL,
 )
 
 class Base(DeclarativeBase):

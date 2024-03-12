@@ -13,12 +13,10 @@ class Settings(BaseSettings):
     ... # other enviroment paramets...
 
     @property
-    def DB_URL_POSTGRES(self):
-        return f'postgresql+asyncpg://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}/{self.DB_NAME}'
-    
-    @property
-    def DB_URL_SQLite(self):
-        return f'sqlite+aiosqlite:///./{self.DB_NAME}.db'
+    def DB_URL(self):
+        psql_url = f'postgresql+asyncpg://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}/{self.DB_NAME}'
+        sqlite_url = f'sqlite+aiosqlite:///./{self.DB_NAME}.db'
+        return psql_url if self.DB_MODE == 'prod' else sqlite_url 
     
     model_config = SettingsConfigDict(env_file='.env')
 

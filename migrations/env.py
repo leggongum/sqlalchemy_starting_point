@@ -18,7 +18,7 @@ from models import Base
 config = context.config
 
 section = config.config_ini_section
-config.set_section_option(section, 'DB_URL', settings.DB_URL_POSTGRES if settings.DB_MODE == 'prod' else settings.DB_URL_SQLite)
+config.set_section_option(section, 'DB_URL', settings.DB_URL)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
