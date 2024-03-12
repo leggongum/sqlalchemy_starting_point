@@ -1,6 +1,6 @@
 ***SQLAlchemy starting point***
 
-What work was done with alembic:    
+**What work was done with alembic:**    
 1. Initialization:   
    ```alembic init -t async migrations```
    
@@ -18,5 +18,16 @@ config.set_section_option(section, 'DB_URL', settings.DB_URL_POSTGRES if setting
 target_metadata = Base.metadata
 ```
 
-3. alembic.ini has been adjusted; change sqlalchemy.url:
-```sqlalchemy.url = %(DB_URL)s```
+3. alembic.ini has been adjusted; change sqlalchemy.url:   
+```sqlalchemy.url = %(DB_URL)s```   
+
+
+**How use it:**   
+1. Copy repository:   
+```git clone https://github.com/leggongum/sqlalchemy_starting_point.git```   
+2. Create .env file and fill it with your db params (You can skip this step to use sqlite db)   
+3. Create your models into src/models.py   
+4. Create alembic revision:   
+```alembic revision --autogenerate```   
+5. Use revision:   
+```alembic upgrade head```   
