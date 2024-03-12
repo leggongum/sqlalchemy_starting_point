@@ -1,7 +1,10 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+from typing import Literal
 
 class Settings(BaseSettings):
+    DB_MODE: Literal['dev', 'prod'] = 'dev'
+
     DB_HOST: str = 'localhost'
     DB_USER: str | None = None
     DB_PASS: str | None = None
